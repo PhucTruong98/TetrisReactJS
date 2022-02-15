@@ -100,3 +100,10 @@ code {
 * {
   box-sizing: border-box;
 }
+
+/* Next Block */
+.next-block {
+  display: grid;
+  grid-template-columns: repeat(4, var(--tile-size));
+  align-self: flex-start;
+}
