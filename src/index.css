@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+
+
 :root {
   --bg-color: rgba(150, 150, 150, 1);
 
@@ -22,7 +24,7 @@ code {
   --border-bottom-color: rgba(0, 0, 0, 0.5);
 
   /* Square Colors:  background colors for the squares.*/
-  --color-0: #eaeaea;
+  --color-0: #e7e5e5;
   --color-1: #ff6600;
   --color-2: #eec900;
   --color-3: #0000ff;
@@ -30,19 +32,20 @@ code {
   --color-5: #00ff00;
   --color-6: #66ccff;
   --color-7: #ff0000;
+  --color-8: #000000;
 
   /* Button Colors */
-  --button-color-t: rgba(200, 200, 200, 1);
+  --button-color-t: rgb(0, 0, 0);
   --button-color-r: rgba(150, 150, 150, 1);
   --button-color-b: rgba(120, 120, 120, 1);
   --button-color-l: rgba(222, 222, 222, 1);
 
   /* Numbers define values that will be used throughout the CSS.
   --tile-size: 20px for example will set size of the grid squares. */
-  --cols: 10;
+  --cols: 20;
   --rows: 18;
   --tile-size: 20px;
-  --border-width: 5px;
+  --border-width: 0.5px;
 }
 
 /* Colors */
@@ -78,22 +81,23 @@ code {
   background-color: var(--color-7);
 }
 
+.color-8 {
+  background-color: var(--color-8);
+}
+
 /* Grid Square */
 .grid-square {
   border-style: solid;
+  border-radius: 3px;
   width: var(--tile-size);
   height: var(--tile-size);
   border-width: var(--border-width);
-  border-left-color: var(--border-left-color);
-  border-top-color: var(--border-top-color);
-  border-right-color: var(--border-right-color);
-  border-bottom-color: var(--border-bottom-color);
 }
 
 .grid-board {
   display: grid;
   grid-template-columns: repeat(var(--cols), var(--tile-size));
-  grid-gap: 0;
+  grid-gap: 0px;
   align-self: flex-start;
   grid-area: c; /* Assign to grid area c */
 
@@ -116,21 +120,21 @@ code {
 /* Score Board */
 .score-board-button {
   display: block;
-  padding: 1em;
-  border-width: 5px;
-  border-top-color: var(--button-color-t);
+  margin: 1em;
+  border-width: 1px;
+  /* border-top-color: var(--button-color-t);
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
-  border-bottom-color: var(--button-color-b);
+  border-bottom-color: var(--button-color-b); */
 }
 
 /* App */
 .App {
   --col-side: calc(var(--tile-size) * 4);
-  --col-center: calc(var(--tile-size) * 10);
+  --col-center: calc(var(--tile-size) * 20);
   --grid-height: calc(var(--tile-size) * 18);
 
-  width: calc(var(--tile-size) * (4 + 1 + 10 + 1 + 4));
+  width: calc(var(--tile-size) * (4 + 1 + 20 + 1 + 4));
   margin: auto;
   display: grid;
 
@@ -155,6 +159,9 @@ and 'b'. The '.' represents an empty cell on the grid. */
 /* score-board */
 .score-board {
   grid-area: r;
+  display: flex;
+  flex-direction: column;
+
 }
 
 /* controls */

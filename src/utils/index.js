@@ -1,3 +1,5 @@
+import { GRID_WIDTH } from "./constants";
+
 export const random = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -5,7 +7,7 @@ export const random = (min, max) => {
 // Returns the default grid
 export const gridDefault = () => {
   const rows = 18;
-  const cols = 10;
+  const cols = GRID_WIDTH;
   const array = [];
 
   for (let i = 0; i < rows; i++) {
@@ -18,16 +20,92 @@ export const gridDefault = () => {
   return array;
 };
 
+
+
+
+export const bossShapes = [
+  [
+    [// level 1 boss + - x /
+      [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+      [1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+      [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+    ],
+
+  ],
+
+  [ // level 2 boss needle rain
+    [
+      [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+      [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+      [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+      [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+      [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+    ],
+  ],
+
+  [ // level 3 ""tetris""
+    [
+      [1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1],
+      [0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+      [0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1],
+      [0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1],
+      [0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1],
+    ],
+  ],
+
+  [ // level 4 ""helix""
+  [
+    [1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+    [0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1],
+    [0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+    [0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1],
+    [1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+  ],
+],
+
+[ // level 5 ""skull""
+[
+  [0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0],
+  [0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+  [1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0],
+  [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+  [0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+  [0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0],
+  [0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0],
+
+
+
+
+
+
+],
+],
+
+]
+
+
+
 // Define block shapes and their rotations as arrays.
 export const shapes = [
   // none
+
   [
     [
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
-      [0, 0, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 1, 1, 1, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 1, 0, 0],
     ],
+  ],
+
+  [
+      [
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+        
+      ]
   ],
 
   // I
@@ -47,7 +125,7 @@ export const shapes = [
     ],
   ],
 
-  // T
+  //T
   [
     [
       [0, 0, 0, 0],
@@ -183,6 +261,214 @@ export const shapes = [
       [0, 0, 0, 0],
     ],
   ],
+
+    // S
+  [
+    [
+      [0, 0, 0, 0],
+      [0, 1, 1, 0],
+      [1, 1, 0, 0],
+      [0, 0, 0, 0],
+    ],
+
+    [
+      [0, 1, 0, 0],
+      [0, 1, 1, 0],
+      [0, 0, 1, 0],
+      [0, 0, 0, 0],
+    ],
+  ],  
+  // tank
+  [
+    [
+      [0, 0, 1, 0],
+      [0, 1, 0, 1],
+      [0, 1, 0, 1],
+      [0, 0, 0, 0],
+    ],
+
+    [
+      [0, 1, 1, 0],
+      [0, 0, 0, 1],
+      [0, 1, 1, 0],
+      [0, 0, 0, 0],
+    ],
+    [
+      [0, 0, 0, 0],
+      [0, 1, 0, 1],
+      [0, 1, 0, 1],
+      [0, 0, 1, 0],
+    ],
+
+    [
+      [0, 0, 1, 1],
+      [0, 1, 0, 0],
+      [0, 0, 1, 1],
+      [0, 0, 0, 0],
+    ],
+  ],
+
+      // w
+      [
+        [
+          [0, 0, 0, 0],
+          [0, 1, 1, 0],
+          [0, 0, 1, 1],
+          [0, 0, 0, 1],
+        ],
+    
+        [
+          [0, 0, 0, 0],
+          [0, 0, 0, 1],
+          [0, 0, 1, 1],
+          [0, 1, 1, 0],
+        ],
+
+        [
+          [0, 0, 0, 0],
+          [0, 1, 0, 0],
+          [0, 1, 1, 0],
+          [0, 0, 1, 1],
+        ],
+
+        [
+          [0, 0, 0, 0],
+          [0, 0, 1, 1],
+          [0, 1, 1, 0],
+          [0, 1, 0, 0],
+        ],
+
+
+      ],  
+
+
+      // sword
+      [
+        [
+          [0, 0, 1, 0],
+          [0, 1, 1, 1],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+        ],
+    
+        [
+          [0, 0, 0, 0],
+          [0, 0, 1, 0],
+          [1, 1, 1, 1],
+          [0, 0, 1, 0],
+        ],
+
+        [
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+          [0, 1, 1, 1],
+          [0, 0, 1, 0],
+        ],
+
+        [
+          [0, 1, 0, 0],
+          [1, 1, 1, 1],
+          [0, 1, 0, 0],
+          [0, 0, 0, 0],
+        ],
+
+
+      ],  
+
+      // y
+      [
+        [
+          [0, 1, 0, 1],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+        ],
+    
+        [
+          [0, 0, 0, 0],
+          [0, 0, 0, 1],
+          [1, 1, 1, 0],
+          [0, 0, 0, 1],
+        ],
+
+        [
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+          [0, 0, 1, 0],
+          [0, 1, 0, 1],
+        ],
+
+        [
+          [1, 0, 0, 0],
+          [0, 1, 1, 1],
+          [1, 0, 0, 0],
+          [0, 0, 0, 0],
+        ],
+
+
+      ],  
+
+      // sword
+      [
+        [
+          [0, 0, 1, 0, 0],
+          [0, 1, 1, 1, 0],
+          [0, 0, 1, 0, 0],
+          [0, 1, 0, 1, 0],
+          [0, 0, 0, 0, 0],
+
+        ],
+    
+        [
+          [0, 0, 0, 0, 0],
+          [0, 1, 0, 1, 0],
+          [0, 0, 1, 0, 1],
+          [0, 1, 0, 1, 0],
+          [0, 0, 0, 0, 0],
+
+        ],
+
+        [
+          [0, 0, 0, 0, 0],
+          [0, 1, 0, 1, 0],
+          [0, 0, 1, 0, 0],
+          [0, 1, 1, 1, 0],
+          [0, 0, 1, 0, 0],
+
+        ],
+
+        [
+          [0, 0, 0, 0, 0],
+          [0, 1, 0, 1, 0],
+          [1, 1, 1, 0, 0],
+          [0, 1, 0, 1, 0],
+          [0, 0, 0, 0, 0],
+
+        ],
+
+
+      ],  
+
+      [
+        [
+          [0,0,0,0,0],
+          [0,0,0,0,0],
+          [1,1,1,1,1],
+          [0,0,0,0,0],
+          [0,0,0,0,0],
+
+        ],
+        [
+          [0,0,1,0,0],
+          [0,0,1,0,0],
+          [0,0,1,0,0],
+          [0,0,1,0,0],
+          [0,0,1,0,0],
+
+        ]
+
+      ]
+
 ];
 
 // Random Shape
@@ -200,7 +486,7 @@ export const defaultState = () => {
     // set rotation of the shape to 0
     rotation: 0,
     // set the 'x' position of the shape to 5 and y to -4, which puts the shape in the center of the grid, above the top
-    x: 5,
+    x: 0,
     y: -4,
     // set the index of the next shape to a new random shape
     nextShape: randomShape(),
@@ -212,6 +498,10 @@ export const defaultState = () => {
     speed: 1000,
     // Game isn't over yet
     gameOver: false,
+    //rows completed
+    rowsCompleted: 0,
+    level: 1,
+    boss: false
   };
 };
 
@@ -221,8 +511,11 @@ export const nextRotation = (shape, rotation) => {
   return (rotation + 1) % shapes[shape].length;
 };
 
-export const canMoveTo = (shape, grid, x, y, rotation) => {
-  const currentShape = shapes[shape][rotation];
+
+//return true or false if the block can move to x, y
+export const canMoveTo = (shape, grid, x, y, rotation, boss, level) => {
+ 
+  const currentShape = boss? bossShapes[level-2][0] : shapes[shape][rotation];
   // Loop through all rows and cols of the **shape**
   for (let row = 0; row < currentShape.length; row++) {
     for (let col = 0; col < currentShape[row].length; col++) {
@@ -256,10 +549,11 @@ export const canMoveTo = (shape, grid, x, y, rotation) => {
   return true;
 };
 
-export const addBlockToGrid = (shape, grid, x, y, rotation) => {
+export const addBlockToGrid = (shape, grid, x, y, rotation, boss, level) => {
   let gameOver = false;
-  const block = shapes[shape][rotation];
+  const block = boss? bossShapes[level - 2][0] : shapes[shape][rotation];
   const newGrid = [...grid];
+  const color = boss? 8 : shape % 7 + 1;
 
   for (let row = 0; row < block.length; row++) {
     for (let col = 0; col < block[row].length; col++) {
@@ -268,14 +562,14 @@ export const addBlockToGrid = (shape, grid, x, y, rotation) => {
         if (yIndex < 0) {
           gameOver = true;
         } else {
-          newGrid[row + y][col + x] = shape;
+          newGrid[row + y][col + x] = color;
         }
       }
     }
   }
 
-  return {grid: newGrid, gameOver: gameOver}};
-
+  return { grid: newGrid, gameOver: gameOver };
+};
 
 export const checkRows = (grid) => {
   const points = [0, 40, 100, 300, 1200];
@@ -285,9 +579,9 @@ export const checkRows = (grid) => {
     if (grid[row].indexOf(0) == -1) {
       completedRow += 1;
       grid.splice(row, 1);
-      grid.unshift(Array(10).fill(0));
+      grid.unshift(Array(GRID_WIDTH).fill(0));
     }
   }
 
-  return points[completedRow];
+  return [points[completedRow], completedRow];
 };

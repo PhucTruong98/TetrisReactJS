@@ -1,0 +1,35 @@
+{
+    "User 1": {
+      
+      "Full Name": "phucTruong",
+      "Email": "phucthanhtruong0405@gmail.com",
+      "User Name": "EmoBoi45!",
+      "DoB": "4/5/1998",
+      "Courses": [
+          "Math 45",
+          "Calculus II", 
+          "Drawing"
+      ],
+
+      "CourseCompletion": "45%",
+      "Reviews": "34",
+      "Rating": "5"
+    },
+    "User 2": {
+      
+        "Full Name": "Evan Scotch",
+        "Email": "evanscotch@gmail.com",
+        "User Name": "spiderboi86!",
+        "DoB": "2/5/2000",
+        "Courses": [
+            "Math 90",
+            "Calculus I", 
+            "Hiphop Dancing"
+        ],
+  
+        "CourseCompletion": "60%",
+        "Reviews": "34",
+        "Rating": "5"
+      }
+  }
+  

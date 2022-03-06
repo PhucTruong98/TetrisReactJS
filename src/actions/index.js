@@ -7,7 +7,6 @@ export const MOVE_DOWN  = "MOVE_DOWN"   // Move piece down
 export const GAME_OVER  = "GAME_OVER"   // The game is over
 export const RESTART    = "RESTART"     // Restart Game
 
-
 export const moveRight = () => {
     return { type: MOVE_RIGHT }
   }
@@ -35,3 +34,4 @@ export const moveRight = () => {
   export const restart = () => {
     return { type: RESTART }
   }
+

@@ -1,5 +1,5 @@
 import GridSquare from './GridSquare'
-import { shapes } from '../utils'
+import { shapes, bossShapes } from '../utils'
 import React, { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { moveDown } from '../actions'
@@ -7,9 +7,6 @@ import { moveDown } from '../actions'
 // Represents a 10 x 18 grid of grid squares
 
 export default function GridBoard(props) {
-
-
-
 
     const requestRef = useRef()
     //last time since board is updated
@@ -19,14 +16,14 @@ export default function GridBoard(props) {
     const dispatch = useDispatch()
 
     const game = useSelector((state) => state.game)
-    const { grid, shape, rotation, x, y, isRunning, speed} = game
-
+    const { grid, shape, rotation, x, y, isRunning, speed, level, boss} = game
 
 
   // generates an array of 18 rows, each containing 10 GridSquares.
 
-  const block = shapes[shape][rotation]
-  const blockColor = shape
+  const block = boss ? bossShapes[level - 2][0] : shapes[shape][rotation]
+  const blockColor = boss ? 8 : shape % 7 + 1
+
   // map rows
   const gridSquares = grid.map((rowArray, row) => {
     // map columns
@@ -38,9 +35,10 @@ export default function GridBoard(props) {
       let color = square
       // Map current falling block to grid.
       // For any squares that fall on the grid we need to look at the block array and see if there is a 1 in this case we use the block color.
-      if (blockX >= 0 && blockX < block.length && blockY >= 0 && blockY < block.length) {
+      if (blockX >= 0 && blockX < block[0].length && blockY >= 0 && blockY < block.length) {
         color = block[blockY][blockX] === 0 ? color : blockColor
       }
+      console.log("boss:" + boss + "color" + color);
       // Generate a unique key for every block
       const k = row * grid[0].length + col;
       // Generate a grid square
@@ -50,11 +48,15 @@ export default function GridBoard(props) {
     })
   })
 
+
+  //setting up the update function, link it to isRunning
   useEffect(() => {
     requestRef.current = requestAnimationFrame(update)
     return () => cancelAnimationFrame(requestRef.current)
 }, [isRunning])
 
+
+//update frames
   const update = (time) => {
     requestRef.current = requestAnimationFrame(update)
     if (!isRunning) {
