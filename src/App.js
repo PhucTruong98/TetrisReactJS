@@ -18,7 +18,7 @@ function App() {
     <Provider store={store}>
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Pentris</h1>
+        <h1 className="App-title">Tetris Boss Rush</h1>
       </header>
       <GridBoard></GridBoard>
       <NextBlock></NextBlock>

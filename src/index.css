@@ -154,6 +154,8 @@ and 'b'. The '.' represents an empty cell on the grid. */
 /* App-header */
 .App-header {
   grid-area: h;
+  border-radius: 30px;
+
 }
 
 /* score-board */
@@ -169,6 +171,7 @@ and 'b'. The '.' represents an empty cell on the grid. */
   grid-area: b;
   display: flex;
   flex-direction: row;
+  text-align: center;
 }
 
 

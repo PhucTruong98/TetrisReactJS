@@ -1,5 +1,5 @@
 import React from "react";
-import { moveDown, moveLeft, moveRight, rotate } from "../actions";
+import { drop, moveLeft, moveRight, MOVE_DOWN, rotate } from "../actions";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Controls(props) {
@@ -70,10 +70,26 @@ export default function Controls(props) {
             return;
           }
 
-          dispatch(moveDown());
+          dispatch(MOVE_DOWN());
         }}
       >
         Down
+      </button>
+
+      {/* down */}
+      <button
+                      disabled={!isRunning || gameOver}
+
+        className="control-button"
+        onClick={(e) => {
+          if (!isRunning || gameOver) {
+            return;
+          }
+
+          dispatch(drop());
+        }}
+      >
+        Drop
       </button>
     </div>
   );
